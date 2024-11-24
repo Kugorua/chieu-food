@@ -60,7 +60,7 @@
     .add-to-cart {
       padding: 10px 20px;
       border: none;
-      background-color: #ff424e;
+      background-color: class="product-item";
       color: white;
       cursor: pointer;
       border-radius: 5px;
@@ -133,41 +133,95 @@
 </head>
 
 <body>
+  <section style="text-align: center;">
+    <button><a style="text-decoration: none;" href="home.html">HOME</a></button>
+  </section>
   <div class="container">
     <h1>Shopping Cart</h1>
     <div class="products">
       <div class="product">
-        <img src="" alt="Iphone 6">
-        <h2>Iphone 6</h2>
-        <p>Price: 320,000 đ</p>
-        <button class="add-to-cart" data-price="320000">Add to Cart</button>
+        <img src="kimpap.jfif" alt="Iphone 6">
+        <h2>KIMBAP</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="20000">THÊM VÀO GIỎ HÀNG</button>
       </div>
       <div class="product">
-        <img src="iphone7.jpg" alt="Iphone 7">
-        <h2>Iphone 7</h2>
-        <p>Price: 125,000 đ</p>
-        <button class="add-to-cart" data-price="125000">Add to Cart</button>
+        <img src="xoi.jfif" alt="Iphone 7">
+        <h2>XÔI</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="20000">THÊM VÀO GIỎ HÀNG</button>
       </div>
       <div class="product">
-        <img src="iphone8.jpg" alt="Iphone 8">
-        <h2>Iphone 8</h2>
-        <p>Price: 429,000 đ</p>
-        <button class="add-to-cart" data-price="429000">Add to Cart</button>
+        <img src="com.jfif" alt="Iphone 8">
+        <h2>CƠM CHIÊN</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="20000">THÊM VÀO GIỎ HÀNG</button>
       </div>
       <div class="product">
-        <img src="samsung.jpg" alt="Samsung">
-        <h2>Samsung</h2>
-        <p>Price: 387,000 đ</p>
-        <button class="add-to-cart" data-price="387000">Add to Cart</button>
+        <img src="banhmycha.jfif" alt="Samsung">
+        <h2>BÁNH MỲ XÁ XÍU</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="20000">THÊM VÀO GIỎ HÀNG</button>
+      </div>
+      <div class="product">
+        <img src="banhmy.jfif" alt="Samsung">
+        <h2>SANDWICH</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="20000">THÊM VÀO GIỎ HÀNG</button>
+      </div>
+      <div class="product">
+        <img src="my.jfif" alt="Samsung">
+        <h2>MỲ TRỘN</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="20000">THÊM VÀO GIỎ HÀNG</button>
+      </div>
+      <div class="product">
+        <img src="bo.jfif" alt="Samsung">
+        <h2>MATCHA-LATTE</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="15000">THÊM VÀO GIỎ HÀNG</button>
+      </div>
+      <div class="product">
+        <img src="hau.jfif" alt="Samsung">
+        <h2>NƯỚC ÉP DƯA HẤU</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="15000">THÊM VÀO GIỎ HÀNG</button>
+      </div>
+      <div class="product">
+        <img src="rot.jfif" alt="Samsung">
+        <h2>NƯỚC ÉP CÀ RỐT</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="15000">THÊM VÀO GIỎ HÀNG</button>
+      </div>
+      <div class="product">
+        <img src="choco.jfif" alt="Samsung">
+        <h2>CHOCO-LATTE</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="15000">THÊM VÀO GIỎ HÀNG</button>
+      </div>
+      <div class="product">
+        <img src="suabi.jfif" alt="Samsung">
+        <h2>SỮA BÍ ĐỎ</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="15000">THÊM VÀO GIỎ HÀNG</button>
+      </div>
+      <div class="product">
+        <img src="trasua.jfif" alt="Samsung">
+        <h2>TRÀ SỮA</h2>
+        <p>Price: 20,000 đ</p>
+        <button class="add-to-cart" data-price="15000">THÊM VÀO GIỎ HÀNG</button>
       </div>
     </div>
     <div class="cart">
       <h2>Cart</h2>
       <div class="cart-items">
-        <!-- Cart items will be added here dynamically -->
+
       </div>
       <p>Total: <span id="cart-total">0</span> đ</p>
     </div>
+    <section style="text-align: center;">
+      <button type="submit"><a style="text-decoration: none;" href="huy2.html">MUA NGAY</a></button>
+    </section>
   </div>
 
   <script>
@@ -197,7 +251,7 @@
                     <p>${name}</p>
                     <p>${price} đ</p>
                     <input type="number" value="1" min="1">
-                    <button class="remove">Remove</button>
+                    <button class="remove">BỎ</button>
                 `;
 
         cartItem.querySelector('input').addEventListener('change', (e) => {

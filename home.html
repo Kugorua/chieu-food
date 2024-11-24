@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KHÁNH CHIÊU FOOD</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -39,8 +40,10 @@
 
     .content {
       padding: 20px;
-      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       background-color: #fdf5e6;
+      gap: 20px;
     }
 
     .banner {
@@ -54,15 +57,25 @@
       object-position: center;
     }
 
+    .product-item-container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+
     .product-item {
       background-color: #f1f1f1;
       padding: 15px;
-      margin-bottom: 20px;
+      box-sizing: border-box;
       border-radius: 10px;
-      width: 299px;
-      height: 290px;
-      margin-left: 6px;
-      display: inline-block;
+      height: 300px;
+      max-width: 320px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
     .product-item h2 {
@@ -170,7 +183,7 @@
       padding: 8px 12px;
       position: absolute;
       bottom: 8px;
-      width: 100%;
+      width: 976px;
       text-align: center;
       background: rgba(0, 0, 0, 0.5);
     }
@@ -192,29 +205,119 @@
     .dot:hover {
       background-color: #717171;
     }
+
+    .hinh {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+      .header {
+        font-size: 20px;
+        padding: 10px;
+      }
+
+      .nav a {
+        padding: 5px 10px;
+      }
+
+      h3 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 668px) {
+      .content {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        background-color: #fdf5e6;
+        gap: 20px;
+      }
+
+      .header {
+        font-size: 18px;
+        padding: 10px;
+      }
+
+      .nav {
+        padding: 10px;
+      }
+
+      .nav a {
+        padding: 10px;
+        margin: 5px 0;
+      }
+
+      .slideshow-container {
+        width: 100%;
+      }
+
+      .slideshow-container img {
+        height: auto;
+      }
+
+      h3 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      .hinh {
+        height: 150px;
+      }
+    }
+
+    @media only screen and (max-width: 460px) {
+      .content {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        background-color: #fdf5e6;
+        gap: 20px;
+      }
+    }
+
+    @media only screen and (max-width: 375px) {
+      .content {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        background-color: #fdf5e6;
+        gap: 20px;
+      }
+    }
+
+    .load-item {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   </style>
 </head>
 
 <body>
   <div class="header">
-    <h1>KHÁNH CHIÊU FOOD</h1>
+    <h1> CHILL FOOD</h1>
   </div>
 
   <div class="nav">
-    <a href="huy2007.html">HOME</a>
-    <a href="huy3.html">FOOD</a>
-    <a href="honme.html">DRINK</a>
+    <a href="home.html">HOME</a>
+    <a href="food.html">FOOD</a>
+    <a href="drink.html">DRINK</a>
   </div>
 
   <div class="slideshow-container">
     <div class="mySlides fade">
       <img src="Screenshot_1.png" style="width:100%">
-      <div class="text"></div>
     </div>
 
     <div class="mySlides fade">
       <img src="slg.jfif" style="width:100%">
-      <div class="text"></div>
     </div>
   </div>
   <br>
@@ -226,45 +329,63 @@
 
   <div class="content">
 
-    <div class="product-item">
-      <h2>CƠM CHIÊN</h2>
-      <img src="com.jfif" width="200px" height="180px">
-      <p style="font-family: sans-serif;color:#ff424e;">SIZE LỚN:20k</p>
-      <p style="font-family: sans-serif;color: #ff424e">SIZE NHỎ:15k</p>
-    </div>
-    <div class="product-item">
-      <h2>SANDWICH</h2>
-      <img src="banhmy.jfif" width="200px" height="180px">
-      <p style="font-family: sans-serif;color:#ff424e;">SIZE LỚN:20k</p>
-      <p style="font-family: sans-serif;color: #ff424e">SIZE NHỎ:15k</p>
-    </div>
-    <div class="product-item">
-      <h2>MỲ TRỘN</h2>
-      <img src="mysao.jfif" width="200px" height="180px">
-      <p style="font-family: sans-serif;color:#ff424e;">SIZE LỚN:20k</p>
-      <p style="font-family: sans-serif;color: #ff424e">SIZE NHỎ:15k</p>
-    </div>
-    <div class="product-item">
-      <h2>kIMBAP</h2>
-      <img src="kimpap.jfif" width="200px" height="180px">
-      <p style="font-family: sans-serif;color:#ff424e;">SIZE LỚN:20k</p>
-      <p style="font-family: sans-serif;color: #ff424e">SIZE NHỎ:15k</p>
-    </div>
-    <div class="product-item">
-      <h2>SỮA BÍ ĐỎ</h2>
-      <img src="suabi.jfif" width="200px" height="180px">
-      <p style="font-family: sans-serif;color:#ff424e;">SIZE LỚN:15k</p>
-      <p style="font-family: sans-serif;color: #ff424e">SIZE NHỎ:10k</p>
-    </div>
-    <div class="product-item">
-      <h2>TRÀ SỮA</h2>
-      <img src="trasua.jfif" width="200px" height="180px">
-      <p style="font-family: sans-serif;color:#ff424e;">SIZE LỚN:15k</p>
-      <p style="font-family: sans-serif;color: #ff424e">SIZE NHỎ:10k</p>
-    </div>
-    <P><a style="text-decoration: none;" href="huy3.html"> Xem Thêm...</P></a>
-  </div>
+    <div class="product-item-container">
+      <div class="product-item">
+        <h2>CƠM CHIÊN</h2>
+        <img class="hinh" src="com.jfif">
+        <p style="font-family: sans-serif;color:black;">SIZE LỚN:20k</p>
+        <p style="font-family: sans-serif;color: black">SIZE NHỎ:15k</p>
+      </div>
 
+    </div>
+    <div class="product-item-container">
+      <div class="product-item">
+        <h2>SANDWICH</h2>
+        <img class="hinh" src="banhmy.jfif">
+        <p style="font-family: sans-serif;color:black;">SIZE LỚN:20k</p>
+        <p style="font-family: sans-serif;color: black">SIZE NHỎ:15k</p>
+      </div>
+
+    </div>
+    <div class="product-item-container">
+      <div class="product-item">
+        <h2>MỲ TRỘN</h2>
+        <img class="hinh" src="mysao.jfif">
+        <p style="font-family: sans-serif;color:black">SIZE LỚN:20k</p>
+        <p style="font-family: sans-serif;color: black">SIZE NHỎ:15k</p>
+      </div>
+
+    </div>
+    <div class="product-item-container">
+      <div class="product-item">
+        <h2>kIMBAP</h2>
+        <img class="hinh" src="kimpap.jfif">
+        <p style="font-family: sans-serif;color:black;">SIZE LỚN:20k</p>
+        <p style="font-family: sans-serif;color: black">SIZE NHỎ:15k</p>
+      </div>
+
+    </div>
+    <div class="product-item-container">
+      <div class="product-item">
+        <h2>SỮA BÍ ĐỎ</h2>
+        <img class="hinh" src="suabi.jfif">
+        <p style="font-family: sans-serif;color:black;">SIZE LỚN:15k</p>
+        <p style="font-family: sans-serif;color: black">SIZE NHỎ:10k</p>
+      </div>
+
+    </div>
+    <div class="product-item-container">
+      <div class="product-item">
+        <h2>TRÀ SỮA</h2>
+        <img class="hinh" src="trasua.jfif">
+        <p style="font-family: sans-serif;color:black;">SIZE LỚN:15k</p>
+        <p style="font-family: sans-serif;color: black">SIZE NHỎ:10k</p>
+      </div>
+
+    </div>
+
+  </div>
+  <p class="load-item"><a style="text-decoration: none;" href="NHUYY.html"> Xem Thêm...</p></a>
   <div class="footer">
     <p style="color: blue;">GỌI ĐỂ ĐẶT HÀNG <br><a style="text-decoration:none;" href="tel:0329031440">0329031440</a>
     </p>

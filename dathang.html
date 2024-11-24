@@ -97,14 +97,10 @@
 </head>
 
 <body>
-  <section style="text-align: center;">
-    <button type="submit"><a style="text-decoration: none;" href="home.html">HOME</a></button>
-  </section>
   <div class="container">
     <h2>Đặt hàng</h2>
     <form id="orderForm">
       <input type="text" id="customerName" placeholder="Tên khách hàng" required>
-
       <input type="text" id="customerPhone" placeholder="Số điện thoại" required>
       <textarea id="customerAddress" rows="4" placeholder="Địa chỉ giao hàng" required></textarea>
       <div class="quantity-container">
@@ -146,7 +142,6 @@
 
       const customerName = document.getElementById('customerName').value;
       const customerPhone = document.getElementById('customerPhone').value;
-      console.log(customerPhone);
       const customerAddress = document.getElementById('customerAddress').value;
       const productSelection = document.getElementById('productSelection').value;
       const productQuantity = document.getElementById('productQuantity').innerText;
@@ -161,15 +156,15 @@
         order_details: `Món: ${productSelection}, Số lượng: ${productQuantity}, Chi tiết: ${orderDetails}`,
         to_email: 'huytopfli@gmail.com'
       };
-      console.log(templateParams.customer_phone),
 
-        emailjs.send('service_v0jmdmn', 'template_wjdjnms', templateParams)
-          .then(function (response) {
-            alert('Đơn hàng đã được gửi thành công!');
-          }, function (error) {
-            alert('Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại.');
-            console.error('EmailJS Error:', error);
-          });
+
+      emailjs.send('service_v0jmdmn', 'template_wjdjnms', templateParams)
+        .then(function (response) {
+          alert('Đơn hàng đã được gửi thành công!');
+        }, function (error) {
+          alert('Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại.');
+          console.error('EmailJS Error:', error);
+        });
 
 
       document.getElementById('orderForm').reset();
@@ -181,11 +176,7 @@
       quantity += 1;
       document.getElementById('productQuantity').innerText = quantity;
     }
-    function handlePhoneChange() {
-      const customerPhone = document.getElementById('customerPhone').value;
-      console.log(`Số điện thoại: ${customerPhone}`);
-      alert(`Số điện thoại bạn nhập: ${customerPhone}`);
-    }
+
     function decreaseQuantity() {
       let quantity = parseInt(document.getElementById('productQuantity').innerText);
       if (quantity > 1) {
