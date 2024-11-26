@@ -58,7 +58,7 @@
     }
 
     .quantity-container {
-      display: flex;
+
       align-items: center;
       justify-content: space-between;
     }
@@ -116,6 +116,267 @@
       padding: 10px 0;
       margin-top: 20px;
     }
+
+
+
+    @media only screen and (max-width: 768px) {
+      body {
+        padding: 10px;
+        font-size: 0.95em;
+      }
+
+      .container {
+        width: 95%;
+        margin-top: 30px;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      form {
+        gap: 15px;
+      }
+
+      input,
+      textarea,
+      select {
+        font-size: 0.95em;
+      }
+
+      button {
+        font-size: 0.9em;
+        padding: 10px;
+      }
+    }
+
+    @media only screen and (max-width: 668px) {
+      body {
+        padding: 8px;
+        font-size: 0.9em;
+      }
+
+      .container {
+        width: 98%;
+        margin-top: 20px;
+      }
+
+      h2 {
+        font-size: 1.3em;
+      }
+
+      input,
+      textarea,
+      select {
+        font-size: 0.9em;
+        padding: 8px;
+      }
+
+      button {
+        padding: 8px;
+        font-size: 0.85em;
+      }
+
+      .order-item {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .quantity-container {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+    }
+
+    @media only screen and (max-width: 460px) {
+      body {
+        padding: 5px;
+        font-size: 0.85em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      input,
+      textarea,
+      select {
+        padding: 6px;
+        font-size: 0.85em;
+      }
+
+      button {
+        padding: 7px;
+        font-size: 0.8em;
+      }
+
+      .order-item img {
+        max-width: 50px;
+      }
+    }
+
+    @media only screen and (max-width: 375px) {
+      body {
+        padding: 5px;
+        font-size: 0.8em;
+      }
+
+      .container {
+        padding: 5px;
+      }
+
+      h2 {
+        font-size: 1em;
+        margin-bottom: 10px;
+      }
+
+      input,
+      textarea,
+      select {
+        padding: 5px;
+        font-size: 0.8em;
+      }
+
+      button {
+        padding: 5px;
+        font-size: 0.75em;
+      }
+
+      .order-item {
+        padding: 8px;
+      }
+
+      .quantity-container {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .quantity-container button {
+        padding: 5px;
+        font-size: 0.75em;
+      }
+
+      .order-item img {
+        max-width: 40px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .order-item label {
+        font-weight: bold;
+        font-size: 1em;
+      }
+
+      .productSelection {
+        width: 100%;
+      }
+
+      .quantity-container {
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .quantity-container span {
+        font-size: 1em;
+        font-weight: bold;
+      }
+
+      .product-image {
+        display: block;
+
+        max-width: 80px;
+      }
+
+      .remove-item {
+
+        font-size: 0.9em;
+        padding: 8px;
+      }
+    }
+
+    @media only screen and (max-width: 668px) {
+      .order-item {
+        gap: 15px;
+      }
+
+      .quantity-container {
+        justify-content: space-between;
+      }
+
+      .product-image {
+        max-width: 70px;
+      }
+    }
+
+    @media only screen and (max-width: 460px) {
+      .order-item {
+        padding: 10px;
+        gap: 10px;
+      }
+
+      .productSelection {
+        font-size: 0.9em;
+        padding: 8px;
+      }
+
+      .product-image {
+        max-width: 60px;
+      }
+
+      .quantity-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .remove-item {
+        font-size: 0.8em;
+        padding: 5px;
+      }
+    }
+
+    @media only screen and (max-width: 375px) {
+      .order-item {
+        padding: 8px;
+      }
+
+      .productSelection {
+        font-size: 0.85em;
+        padding: 6px;
+      }
+
+      .product-image {
+        max-width: 50px;
+      }
+
+      .quantity-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .remove-item {
+        font-size: 0.75em;
+        padding: 4px;
+      }
+    }
+  </style>
+
+
+
+
+  </style>
+
+  </style>
+
   </style>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
