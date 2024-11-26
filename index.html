@@ -119,9 +119,9 @@
   </style>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
-    // Khởi tạo EmailJS
+
     (function () {
-      emailjs.init("neFeefFy6lcRVzvON"); // Thay "neFeefFy6lcRVzvON" bằng ID tài khoản EmailJS của bạn
+      emailjs.init("neFeefFy6lcRVzvON");
     })();
   </script>
 </head>
@@ -178,7 +178,7 @@
   <script>
     let itemIndex = 1;
 
-    // Cập nhật hình ảnh món ăn khi thay đổi lựa chọn
+
     function updateProductImage(index) {
       const selectElement = document.getElementById(`productSelection${index}`);
       const selectedOption = selectElement.options[selectElement.selectedIndex];
@@ -186,7 +186,7 @@
       document.getElementById(`productImage${index}`).src = imagePath;
     }
 
-    // Thêm món mới
+
     function addOrderItem() {
       itemIndex++;
       const container = document.getElementById('orderItemsContainer');
@@ -219,14 +219,13 @@
       container.insertAdjacentHTML('beforeend', newItem);
     }
 
-    // Tăng số lượng món
     function increaseQuantity(quantityId) {
       let quantity = parseInt(document.getElementById(quantityId).innerText);
       quantity += 1;
       document.getElementById(quantityId).innerText = quantity;
     }
 
-    // Giảm số lượng món
+
     function decreaseQuantity(quantityId) {
       let quantity = parseInt(document.getElementById(quantityId).innerText);
       if (quantity > 1) {
@@ -235,13 +234,12 @@
       }
     }
 
-    // Xóa món đã chọn
     function removeOrderItem(index) {
       const item = document.getElementById(`orderItem${index}`);
       item.remove();
     }
 
-    // Gửi thông tin đơn hàng
+
     document.getElementById('orderForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -250,7 +248,6 @@
       const customerAddress = document.getElementById('customerAddress').value;
       const orderNotes = document.getElementById('orderNotes').value;
 
-      // Thu thập dữ liệu các món ăn
       let orderDetails = '';
       for (let i = 1; i <= itemIndex; i++) {
         const product = document.getElementById(`productSelection${i}`).value;
@@ -258,7 +255,7 @@
         orderDetails += `Món ${i}: ${product} (x${quantity})\n`;
       }
 
-      // Chuẩn bị thông tin gửi
+
       const templateParams = {
         to_name: 'Chủ cửa hàng',
         from_name: customerName,
@@ -269,7 +266,7 @@
         to_email: 'huyonechamfli@gmail.com',
       };
 
-      // Gửi email qua EmailJS
+
       emailjs.send('service_v0jmdmn', 'template_wjdjnms', templateParams)
         .then(function (response) {
           console.log('SUCCESS!', response.status, response.text);

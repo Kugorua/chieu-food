@@ -104,7 +104,6 @@
     <h2>Đặt hàng</h2>
     <form id="orderForm">
       <input type="text" id="customerName" placeholder="Tên khách hàng" required>
-
       <input type="text" id="customerPhone" placeholder="Số điện thoại" required>
       <textarea id="customerAddress" rows="4" placeholder="Địa chỉ giao hàng" required></textarea>
       <div class="quantity-container">
@@ -114,24 +113,47 @@
           <option value="Sandwich">Sandwich</option>
           <option value="Mỳ Trộn">Mỳ Trộn</option>
           <option value="Kimbap">Kimbap</option>
-          <option value="Sữa Bí Đỏ">Cơm Chiên</option>
-          <option value="Trà Sữa">Xôi</option>
-          <option value="Trà Sữa">Bánh Mỳ Xá Xíu</option>
+          <option value="Sữa Bí Đỏ">Sữa Bí Đỏ</option>
           <option value="Trà Sữa">Trà Sữa</option>
-          <option value="Trà Sữa">Sữa Bí Đỏ</option>
-          <option value="Trà Sữa">Nước Ép Dưa Hấu</option>
-          <option value="Trà Sữa">Nước Ép Cà Rốt</option>
-          <option value="Trà Sữa">Choco Latte</option>
-          <option value="Trà Sữa">Matcha Latte</option>
+          <option value="Bánh Mỳ Xá Xíu">Bánh Mỳ Xá Xíu</option>
+          <option value="Xôi">Xôi</option>
+          <option value="Nước Ép Dưa Hấu">Nước Ép Dưa Hấu</option>
+          <option value="Nước Ép Cà Rốt">Nước Ép Cà Rốt</option>
+          <option value="Choco Latte">Choco Latte</option>
+          <option value="Matcha Latte">Matcha Latte</option>
         </select>
       </div>
       <div class="quantity-container">
-        <label for="productQuantity">Số lượng:</label>
-        <button type="button" class="quantity-btn" onclick="decreaseQuantity()">-</button>
-        <span id="productQuantity">1</span>
-        <button type="button" class="quantity-btn" onclick="increaseQuantity()">+</button>
+        <label for="productSelection2">Chọn món:</label>
+        <select id="productSelection2">
+          <option value="Cơm Chiên">Cơm Chiên</option>
+          <option value="Sandwich">Sandwich</option>
+          <option value="Mỳ Trộn">Mỳ Trộn</option>
+          <option value="Kimbap">Kimbap</option>
+          <option value="Sữa Bí Đỏ">Sữa Bí Đỏ</option>
+          <option value="Trà Sữa">Trà Sữa</option>
+          <option value="Bánh Mỳ Xá Xíu">Bánh Mỳ Xá Xíu</option>
+          <option value="Xôi">Xôi</option>
+          <option value="Nước Ép Dưa Hấu">Nước Ép Dưa Hấu</option>
+          <option value="Nước Ép Cà Rốt">Nước Ép Cà Rốt</option>
+          <option value="Choco Latte">Choco Latte</option>
+          <option value="Matcha Latte">Matcha Latte</option>
+        </select>
       </div>
-      <textarea id="orderDetails" rows="4" placeholder="Chi tiết đơn hàng (nếu có)" required></textarea>
+      <div class="quantity-container">
+        <label for="productQuantity">Số lượng món 1:</label>
+        <button type="button" class="quantity-btn" onclick="decreaseQuantity('productQuantity')">-</button>
+        <span id="productQuantity">1</span>
+        <button type="button" class="quantity-btn" onclick="increaseQuantity('productQuantity')">+</button>
+      </div>
+      <div class="quantity-container">
+        <label for="productQuantity2">Số lượng món 2:</label>
+        <button type="button" class="quantity-btn" onclick="decreaseQuantity('productQuantity2')">-</button>
+        <span id="productQuantity2">1</span>
+        <button type="button" class="quantity-btn" onclick="increaseQuantity('productQuantity2')">+</button>
+      </div>
+
+      <textarea id="orderDetails" rows="4" placeholder="Chi tiết đơn hàng " required></textarea>
       <button type="submit">Gửi đơn hàng</button>
     </form>
   </div>
@@ -146,53 +168,50 @@
 
       const customerName = document.getElementById('customerName').value;
       const customerPhone = document.getElementById('customerPhone').value;
-      console.log(customerPhone);
       const customerAddress = document.getElementById('customerAddress').value;
       const productSelection = document.getElementById('productSelection').value;
+      const productSelection2 = document.getElementById('productSelection2').value;
       const productQuantity = document.getElementById('productQuantity').innerText;
       const orderDetails = document.getElementById('orderDetails').value;
-
 
       const templateParams = {
         to_name: 'Chủ cửa hàng',
         from_name: customerName,
         customer_phone: customerPhone,
         customer_address: customerAddress,
-        order_details: `Món: ${productSelection}, Số lượng: ${productQuantity}, Chi tiết: ${orderDetails}`,
+        order_details: `Món 1: ${productSelection}, Món 2: ${productSelection2}, Số lượng món 1: ${productQuantity},Số lượng món 2: ${productQuantity}, Chi tiết: ${orderDetails}`,
         to_email: 'huytopfli@gmail.com'
       };
-      console.log(templateParams.customer_phone),
 
-        emailjs.send('service_v0jmdmn', 'template_wjdjnms', templateParams)
-          .then(function (response) {
-            alert('Đơn hàng đã được gửi thành công!');
-          }, function (error) {
-            alert('Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại.');
-            console.error('EmailJS Error:', error);
-          });
+      console.log(templateParams);
 
+      emailjs.send('service_v0jmdmn', 'template_wjdjnms', templateParams)
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Đơn hàng đã được gửi thành công!');
+        }, function (error) {
+          console.log('FAILED...', error);
+          alert('Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại.');
+        });
 
       document.getElementById('orderForm').reset();
       document.getElementById('productQuantity').innerText = 1;
     });
 
-    function increaseQuantity() {
-      let quantity = parseInt(document.getElementById('productQuantity').innerText);
+    function increaseQuantity(quantityId) {
+      let quantity = parseInt(document.getElementById(quantityId).innerText);
       quantity += 1;
-      document.getElementById('productQuantity').innerText = quantity;
+      document.getElementById(quantityId).innerText = quantity;
     }
-    function handlePhoneChange() {
-      const customerPhone = document.getElementById('customerPhone').value;
-      console.log(`Số điện thoại: ${customerPhone}`);
-      alert(`Số điện thoại bạn nhập: ${customerPhone}`);
-    }
-    function decreaseQuantity() {
-      let quantity = parseInt(document.getElementById('productQuantity').innerText);
+
+    function decreaseQuantity(quantityId) {
+      let quantity = parseInt(document.getElementById(quantityId).innerText);
       if (quantity > 1) {
         quantity -= 1;
-        document.getElementById('productQuantity').innerText = quantity;
+        document.getElementById(quantityId).innerText = quantity;
       }
     }
+
   </script>
 
 </body>
