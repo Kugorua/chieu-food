@@ -103,6 +103,12 @@
       padding: 8px;
       border-radius: 5px;
       cursor: pointer;
+      width: 37px;
+      height: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     .remove-item:hover {
@@ -403,16 +409,24 @@
         <div class="order-item" id="orderItem1">
           <label for="productSelection1">Chọn món:</label>
           <select id="productSelection1" class="productSelection" onchange="updateProductImage(1)">
-            <option value="Cơm Chiên" data-img="com.jfif">Cơm Chiên</option>
+            <option value="Cơm Chiên:Size Lớn" data-img="com.jfif">Cơm Chiên:Size Lớn</option>
+            <option value="Cơm Chiên:Size Nhỏ" data-img="com.jfif">Cơm Chiên:Size Nhỏ</option>
             <option value="Sandwich" data-img="banhmy.jfif">Sandwich</option>
-            <option value="Mỳ Trộn" data-img="my.jfif">Mỳ Trộn</option>
-            <option value="Kimbap" data-img="kimpap.jfif">Kimbap</option>
-            <option value="Sữa Bí Đỏ" data-img="suabi.jfif">Sữa Bí Đỏ</option>
-            <option value="Trà Sữa" data-img="trasua.jfif">Trà Sữa</option>
+            <option value="Mỳ Trộn:Size Lớn" data-img="my.jfif">Mỳ Trộn:Size Lớn</option>
+            <option value="Mỳ Trộn:Size Nhỏ" data-img="my.jfif">Mỳ Trộn:Size Nhỏ</option>
+            <option value="Kimbap:Size Lớn" data-img="kimpap.jfif">Kimbap:Size Lớn</option>
+            <option value="Kimbap:Size Nhỏ" data-img="kimpap.jfif">Kimbap:Size Nhỏ</option>
+            <option value="Sữa Bí Đỏ:Size Lớn" data-img="suabi.jfif">Sữa Bí Đỏ:Size Lớn</option>
+            <option value="Sữa Bí Đỏ:Size Nhỏ" data-img="suabi.jfif">Sữa Bí Đỏ:Size Nhỏ</option>
+            <option value="Trà Sữa:Size Lớn" data-img="trasua.jfif">Trà Sữa:Size Lớn</option>
+            <option value="Trà Sữa:Size Nhỏ" data-img="trasua.jfif">Trà Sữa:Size Nhỏ</option>
             <option value="Bánh Mỳ Xá Xíu" data-img="banhmycha.jfif">Bánh Mỳ Xá Xíu</option>
-            <option value="Xôi" data-img="xoi.jfif">Xôi</option>
-            <option value="Nước Ép Dưa Hấu" data-img="hau.jfif">Nước Ép Dưa Hấu</option>
-            <option value="Nước Ép Cà Rốt" data-img="rot.jfif">Nước Ép Cà Rốt</option>
+            <option value="Xôi:Size Lớn" data-img="xoi.jfif">Xôi:Size Lớn</option>
+            <option value="Xôi:Size Nhỏ" data-img="xoi.jfif">Xôi:Size Nhỏ</option>
+            <option value="Nước Ép Dưa Hấu:Size Lớn" data-img="hau.jfif">Nước Ép Dưa Hấu:Size Lớn</option>
+            <option value="Nước Ép Dưa Hấu:Size Nhỏ" data-img="hau.jfif">Nước Ép Dưa Hấu:Size Nhỏ</option>
+            <option value="Nước Ép Cà Rốt:Size Lớn" data-img="rot.jfif">Nước Ép Cà Rốt:Size Lớn</option>
+            <option value="Nước Ép Cà Rốt:Size Nhỏ" data-img="rot.jfif">Nước Ép Cà Rốt:Size Nhỏ</option>
             <option value="Choco Latte" data-img="choco.jfif">Choco Latte</option>
             <option value="Matcha Latte" data-img="bo.jfif">Matcha Latte</option>
           </select>
@@ -455,16 +469,24 @@
         <div class="order-item" id="orderItem${itemIndex}">
           <label for="productSelection${itemIndex}">Chọn món:</label>
           <select id="productSelection${itemIndex}" class="productSelection" onchange="updateProductImage(${itemIndex})">
-            <option value="Cơm Chiên" data-img="com.jfif">Cơm Chiên</option>
+            <option value="Cơm Chiên:Size Lớn" data-img="com.jfif">Cơm Chiên:Size Lớn</option>
+            <option value="Cơm Chiên:Size Nhỏ" data-img="com.jfif">Cơm Chiên:Size Nhỏ</option>
             <option value="Sandwich" data-img="banhmy.jfif">Sandwich</option>
-            <option value="Mỳ Trộn" data-img="my.jfif">Mỳ Trộn</option>
-            <option value="Kimbap" data-img="kimpap.jfif">Kimbap</option>
-            <option value="Sữa Bí Đỏ" data-img="suabi.jfif">Sữa Bí Đỏ</option>
-            <option value="Trà Sữa" data-img="trasua.jfif">Trà Sữa</option>
-            <option value="Bánh Mỳ Xá Xíu" data-img="trasua.jfif">Bánh Mỳ Xá Xíu</option>
-            <option value="Xôi" data-img="xoi.jfif">Xôi</option>
-            <option value="Nước Ép Dưa Hấu" data-img="hau.jfif">Nước Ép Dưa Hấu</option>
-            <option value="Nước Ép Cà Rốt" data-img="rot.jfif">Nước Ép Cà Rốt</option>
+            <option value="Mỳ Trộn:Size Lớn" data-img="my.jfif">Mỳ Trộn:Size Lớn</option>
+             <option value="Mỳ Trộn:Size Nhỏ" data-img="my.jfif">Mỳ Trộn:Size Nhỏ</option>
+            <option value="Kimbap:Size Lớn" data-img="kimpap.jfif">Kimbap:Size Lớn</option>
+            <option value="Kimbap:Size Nhỏ" data-img="kimpap.jfif">Kimbap:Size Nhỏ</option>
+            <option value="Sữa Bí Đỏ:Size Lớn" data-img="suabi.jfif">Sữa Bí Đỏ:Size Lớn</option>
+              <option value="Sữa Bí Đỏ:Size Nhỏ" data-img="suabi.jfif">Sữa Bí Đỏ:Size Nhỏ</option>
+            <option value="Trà Sữa:Size Lớn" data-img="trasua.jfif">Trà Sữa:Size Lớn</option>
+             <option value="Trà Sữa:Size Nhỏ" data-img="trasua.jfif">Trà Sữa:Size Nhỏ</option>
+            <option value="Bánh Mỳ Xá Xíu" data-img="banhmycha.jfif">Bánh Mỳ Xá Xíu</option>
+            <option value="Xôi:Size Lớn" data-img="xoi.jfif">Xôi:Size Lớn</option>
+              <option value="Xôi:Size Nhỏ" data-img="xoi.jfif">Xôi:Size Nhỏ</option>
+            <option value="Nước Ép Dưa Hấu:Size Lớn" data-img="hau.jfif">Nước Ép Dưa Hấu:Size Lớn</option>
+             <option value="Nước Ép Dưa Hấu:Size Nhỏ" data-img="hau.jfif">Nước Ép Dưa Hấu:Size Nhỏ</option>
+            <option value="Nước Ép Cà Rốt:Size Lớn" data-img="rot.jfif">Nước Ép Cà Rốt:Size Lớn</option>
+             <option value="Nước Ép Cà Rốt:Size Nhỏ" data-img="rot.jfif">Nước Ép Cà Rốt:Size Nhỏ</option>
             <option value="Choco Latte" data-img="choco.jfif">Choco Latte</option>
             <option value="Matcha Latte" data-img="bo.jfif">Matcha Latte</option>
           </select>
@@ -501,6 +523,13 @@
     }
 
 
+    function updateProductImage(index) {
+      const selectElement = document.getElementById(`productSelection${index}`);
+      const selectedOption = selectElement.options[selectElement.selectedIndex];
+      const imagePath = selectedOption.getAttribute('data-img');
+      document.getElementById(`productImage${index}`).src = imagePath;
+    }
+
     document.getElementById('orderForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -511,11 +540,12 @@
 
       let orderDetails = '';
       for (let i = 1; i <= itemIndex; i++) {
-        const product = document.getElementById(`productSelection${i}`).value;
+        const product = document.getElementById(`productSelection${i}`).value; // Lấy tên món và kích thước
         const quantity = document.getElementById(`quantity${i}`).innerText;
-        orderDetails += `Món ${i}: ${product} (x${quantity})\n`;
+        if (product) {
+          orderDetails += `Món ${i}: ${product} (x${quantity})\n`;
+        }
       }
-
 
       const templateParams = {
         to_name: 'Chủ cửa hàng',
@@ -527,7 +557,6 @@
         to_email: 'huyonechamfli@gmail.com',
       };
 
-
       emailjs.send('service_v0jmdmn', 'template_wjdjnms', templateParams)
         .then(function (response) {
           console.log('SUCCESS!', response.status, response.text);
@@ -537,6 +566,8 @@
           alert('Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại!');
         });
     });
+
+
   </script>
 </body>
 
